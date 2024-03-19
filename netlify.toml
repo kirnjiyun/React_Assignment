@@ -1,0 +1,4 @@
+[build]
+  base = "rsp/"
+  publish = "rsp/build"
+  command = "npm run build"
