@@ -19,15 +19,52 @@ const choices = {
 };
 
 function App() {
-    const [userSelect, setUserSelect] = useState("");
+    const [userSelect, setUserSelect] = useState(null);
+    const [comSelect, setComSelect] = useState(null);
+    const [result, setResult] = useState("");
+    const [comResult, setComResult] = useState("");
     const play = (userChoice) => {
         setUserSelect(choices[userChoice]);
+        let computerChoice = randomChoice();
+        setComSelect(computerChoice);
+        judgement(choices[userChoice], computerChoice);
+    };
+    const judgement = (user, com) => {
+        let result;
+        let comResult;
+        if (
+            (user.name === "rock" && com.name === "paper") ||
+            (user.name === "paper" && com.name === "scissors") ||
+            (user.name === "scissors" && com.name === "rock")
+        ) {
+            result = "짐";
+            comResult = "이김";
+        } else if (
+            (user.name === "rock" && com.name === "rock") ||
+            (user.name === "paper" && com.name === "paper") ||
+            (user.name === "scissors" && com.name === "scissors")
+        ) {
+            result = "비김";
+            comResult = "비김";
+        } else {
+            result = "이김";
+            comResult = "짐";
+        }
+        setResult(result);
+        setComResult(comResult);
+    };
+
+    const randomChoice = () => {
+        let itemArray = Object.keys(choices);
+        let randomValue = Math.floor(Math.random() * 3);
+        let final = itemArray[randomValue];
+        return choices[final];
     };
     return (
         <div className={styles.main}>
             <div className={styles.box}>
-                <Box1 title="Me" item={userSelect} />
-                <Box2 title="Computer" item={userSelect} />
+                <Box1 title="Me" item={userSelect} result={result} />
+                <Box2 title="Computer" item={comSelect} result={comResult} />
             </div>
 
             <div>
