@@ -14,7 +14,11 @@ const Box2 = (props) => {
     return (
         <div className={styles.box} style={boxStyle}>
             <h1>{props.title}</h1>
-            <img className={styles.img} src={props.item && props.item.img} />
+            <img
+                className={styles.img}
+                src={props.item && props.item.img}
+                alt=""
+            />
             <h2>{props.result}</h2>
         </div>
     );
