@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 import Box from "./component/Box";
 import styles from "./app.module.css";
-
+import rock from "././img/rspImg/r/rock.png";
+import scissors from "././img/rspImg/s/sci.png";
+import paper from "././img/rspImg/p/bo.png";
 const choices = {
     rock: {
         name: "rock",
-        img: "https://t3.ftcdn.net/jpg/02/93/71/22/360_F_293712283_EGPqlm1bxpH0ZnrngyjRBol9GnJm2ST7.jpg",
+        img: rock,
     },
     scissors: {
         name: "scissors",
-        img: "https://ae01.alicdn.com/kf/Se816511cf4434f3db2474dc1620fcb48x/1Pc-Kawaii-Scissors-Korean-Fashion-Cute-Cartoon-Animal-Stationery-Scissors-DIY-Scrapbook-Cutting-Paper-Scissors-Student.jpg",
+        img: scissors,
     },
     paper: {
         name: "paper",
-        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwqX4ioZz3vEaZC1UEiCzk8RWppkZdONEnyw&usqp=CAU",
+        img: paper,
     },
 };
 
@@ -36,18 +38,18 @@ function App() {
             (user.name === "paper" && com.name === "scissors") ||
             (user.name === "scissors" && com.name === "rock")
         ) {
-            result = "짐";
-            comResult = "이김";
+            result = "졌다...";
+            comResult = "이겼다!";
         } else if (
             (user.name === "rock" && com.name === "rock") ||
             (user.name === "paper" && com.name === "paper") ||
             (user.name === "scissors" && com.name === "scissors")
         ) {
-            result = "비김";
-            comResult = "비김";
+            result = "비겼다";
+            comResult = "비겼다";
         } else {
-            result = "이김";
-            comResult = "짐";
+            result = "이겼다!";
+            comResult = "졌다...";
         }
         setResult(result);
         setComResult(comResult);

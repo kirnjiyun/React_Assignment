@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "./box.module.css";
-import nothing from "../img/가위바위보이미지/nothing.png";
+import nothing from "../img/rspImg/nothing.png";
 
 function Box(props) {
     let boxClass = "";
-    if (props.result === "이김") {
+    if (props.result === "이겼다!") {
         boxClass = styles.win;
-    } else if (props.result === "짐") {
+    } else if (props.result === "졌다...") {
         boxClass = styles.lose;
     } else {
         boxClass = styles.tie;
