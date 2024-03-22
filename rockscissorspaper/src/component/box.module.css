@@ -1,0 +1,25 @@
+.box {
+    border: 20px solid black;
+    border-radius: 50px;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.633);
+}
+.img {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    object-position: center;
+}
+h1,
+h2,
+button {
+    font-family: "WagleWagle";
+}
+h1 {
+    font-size: 60px;
+}

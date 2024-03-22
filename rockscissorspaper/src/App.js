@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import Box1 from "./component/Box1";
-import Box2 from "./component/Box2";
+import Box from "./component/Box";
 import styles from "./app.module.css";
 
 const choices = {
@@ -63,25 +62,25 @@ function App() {
     return (
         <div className={styles.main}>
             <div className={styles.box}>
-                <Box1 title="Me" item={userSelect} result={result} />
-                <Box2 title="Computer" item={comSelect} result={comResult} />
+                <Box title="Me" item={userSelect} result={result} />
+                <Box title="Computer" item={comSelect} result={comResult} />
             </div>
 
             <div>
                 <ul>
                     <li>
                         <button onClick={() => play("scissors")}>
-                            ✂️✂️가위✂️✂️
+                            <span>가위</span>
                         </button>
                     </li>
                     <li>
                         <button onClick={() => play("rock")}>
-                            🪨🪨바위🪨🪨
+                            <span>바위</span>
                         </button>
                     </li>
                     <li>
                         <button onClick={() => play("paper")}>
-                            ✋✋보✋✋
+                            <span>보</span>
                         </button>
                     </li>
                 </ul>

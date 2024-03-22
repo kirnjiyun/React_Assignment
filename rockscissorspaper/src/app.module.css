@@ -1,17 +1,62 @@
+@font-face {
+    font-family: "WagleWagle";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2301-wagle@1.0/WagleWagle.woff")
+        format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
 .main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    padding-top: 50px;
+    min-width: 100vw;
+    min-height: 100vh;
+    background-image: url(../src/img//배경/background.jpeg);
+    background-size: cover;
+    background-repeat: repeat;
 }
 .main > ul,
 li {
     list-style: none;
-    padding: 10px;
 }
+
+ul {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
 .box {
     display: flex;
     flex-direction: row;
     gap: 50px;
+}
+button {
+    margin-top: 20px;
+    position: relative;
+    width: 200px;
+    padding: 16px;
+    border: none;
+    border-bottom: 5px solid #ad7900;
+    border-radius: 8px;
+    background: #fab70f;
+    color: black;
+    font-size: 3rem;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+    outline: none;
+    cursor: pointer;
+    transition-duration: 0.2s;
+    &:hover {
+        background: #d49b0d;
+        border-bottom-color: #946800;
+        color: #eee;
+    }
+    &:active {
+        bottom: -3px;
+        border-bottom: 2px solid #543c00;
+        background: #a17300;
+        color: #ada48b;
+    }
 }

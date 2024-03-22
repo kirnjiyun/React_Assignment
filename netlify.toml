@@ -1,4 +1,0 @@
-[build]
-  base = "rockscissorspaper/"
-  publish = "build"
-  command = "npm run build"
