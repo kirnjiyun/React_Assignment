@@ -1,37 +1,76 @@
+:root {
+    --box-width: 70vw;
+}
+
 .box {
     border: 20px solid black;
     border-radius: 50px;
     width: 500px;
     height: 500px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.633);
 }
+
 .win {
     border: 20px solid #9ed29e;
 }
+
 .lose {
     border: 20px solid #ef5774;
 }
+
 .tie {
     border: 20px solid black;
 }
+
 .img {
-    width: 320px;
-    height: 320px;
+    width: 60%;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     object-position: center;
 }
+
 h1,
 h2,
 button {
     font-family: "WagleWagle";
 }
+
 h1 {
-    font-size: 60px;
+    font-size: 56px;
 }
+
 h2 {
-    font-size: 44px;
+    font-size: 36px;
+}
+
+@media (max-width: 768px) {
+    .box {
+        flex-direction: column;
+        width: var(--box-width);
+        height: var(--box-width);
+        border-radius: 25px;
+        box-sizing: border-box;
+    }
+
+    .img {
+        width: 50%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    h1 {
+        padding-top: 50px;
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 24px;
+        padding-bottom: 50px;
+    }
 }

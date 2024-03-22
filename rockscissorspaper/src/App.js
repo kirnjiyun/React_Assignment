@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import Box from "./component/Box";
+import ChoiceButton from "./component/ChoiceButton";
 import styles from "./app.module.css";
 import rock from "././img/rspImg/r/rock.png";
 import scissors from "././img/rspImg/s/sci.png";
 import paper from "././img/rspImg/p/bo.png";
 const choices = {
-    rock: {
-        name: "rock",
+    바위: {
+        name: "바위",
         img: rock,
     },
-    scissors: {
-        name: "scissors",
+    가위: {
+        name: "가위",
         img: scissors,
     },
-    paper: {
-        name: "paper",
+    보: {
+        name: "보",
         img: paper,
     },
 };
@@ -24,26 +25,28 @@ function App() {
     const [comSelect, setComSelect] = useState(null);
     const [result, setResult] = useState("");
     const [comResult, setComResult] = useState("");
+
     const play = (userChoice) => {
         setUserSelect(choices[userChoice]);
         let computerChoice = randomChoice();
         setComSelect(computerChoice);
         judgement(choices[userChoice], computerChoice);
     };
+
     const judgement = (user, com) => {
         let result;
         let comResult;
         if (
-            (user.name === "rock" && com.name === "paper") ||
-            (user.name === "paper" && com.name === "scissors") ||
-            (user.name === "scissors" && com.name === "rock")
+            (user.name === "바위" && com.name === "보") ||
+            (user.name === "보" && com.name === "가위") ||
+            (user.name === "가위" && com.name === "바위")
         ) {
             result = "졌다...";
             comResult = "이겼다!";
         } else if (
-            (user.name === "rock" && com.name === "rock") ||
-            (user.name === "paper" && com.name === "paper") ||
-            (user.name === "scissors" && com.name === "scissors")
+            (user.name === "바위" && com.name === "바위") ||
+            (user.name === "보" && com.name === "보") ||
+            (user.name === "가위" && com.name === "가위")
         ) {
             result = "비겼다";
             comResult = "비겼다";
@@ -68,25 +71,11 @@ function App() {
                 <Box title="Computer" item={comSelect} result={comResult} />
             </div>
 
-            <div>
-                <ul>
-                    <li>
-                        <button onClick={() => play("scissors")}>
-                            <span>가위</span>
-                        </button>
-                    </li>
-                    <li>
-                        <button onClick={() => play("rock")}>
-                            <span>바위</span>
-                        </button>
-                    </li>
-                    <li>
-                        <button onClick={() => play("paper")}>
-                            <span>보</span>
-                        </button>
-                    </li>
-                </ul>
-            </div>
+            <ul className={styles.ul}>
+                <ChoiceButton choice="가위" play={play} />
+                <ChoiceButton choice="바위" play={play} />
+                <ChoiceButton choice="보" play={play} />
+            </ul>
         </div>
     );
 }

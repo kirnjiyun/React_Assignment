@@ -23,7 +23,11 @@ function Box(props) {
                     alt="아직 안 정했을때 이미지"
                 />
             )}
-            <h2>{props.result}</h2>
+            {props.item && props.item.name ? (
+                <h2>{`${props?.item?.name}로 ${props.result}`}</h2>
+            ) : (
+                <h2></h2>
+            )}
         </div>
     );
 }
