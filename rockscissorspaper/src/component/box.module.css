@@ -9,6 +9,15 @@
     align-items: center;
     background-color: rgba(255, 255, 255, 0.633);
 }
+.win {
+    border: 20px solid #9ed29e;
+}
+.lose {
+    border: 20px solid #ef5774;
+}
+.tie {
+    border: 20px solid black;
+}
 .img {
     width: 320px;
     height: 320px;

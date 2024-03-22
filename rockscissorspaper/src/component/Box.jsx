@@ -2,18 +2,17 @@ import React from "react";
 import styles from "./box.module.css";
 import nothing from "../img/가위바위보이미지/nothing.png";
 
-const Box2 = (props) => {
-    console.log(props.result);
-    const boxStyle = {
-        border:
-            props.result === "짐"
-                ? "20px solid                #ef5774"
-                : props.result === "이김"
-                ? "20px solid #9ed29e"
-                : "",
-    };
+function Box(props) {
+    let boxClass = "";
+    if (props.result === "이김") {
+        boxClass = styles.win;
+    } else if (props.result === "짐") {
+        boxClass = styles.lose;
+    } else {
+        boxClass = styles.tie;
+    }
     return (
-        <div className={styles.box} style={boxStyle}>
+        <div className={`${styles.box} ${boxClass}`}>
             <h1>{props.title}</h1>
             {props.item && props.item.img ? (
                 <img className={styles.img} src={props.item.img} alt="" />
@@ -27,6 +26,6 @@ const Box2 = (props) => {
             <h2>{props.result}</h2>
         </div>
     );
-};
+}
 
-export default Box2;
+export default Box;
