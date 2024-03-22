@@ -24,10 +24,8 @@ function Box(props) {
                 />
             )}
             {props.item && props.item.name ? (
-                <h2>{`${props?.item?.name}로 ${props.result}`}</h2>
-            ) : (
-                <h2></h2>
-            )}
+                <h2>{`${props.item.name}로 ${props.result}`}</h2>
+            ) : null}
         </div>
     );
 }
